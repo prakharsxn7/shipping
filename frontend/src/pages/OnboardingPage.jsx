@@ -12,11 +12,11 @@ export default function OnboardingPage() {
   const navigate = useNavigate();
   const { logout } = useDemoAuth();
 
-  // Step 1: Account (completed upon arrival)
-  // Step 2: Profile (initial active onboarding step)
+  // Step 1: Account
+  // Step 2: Profile 
   // Step 3: Details
   // Step 4: Finish
-  const [currentStep, setCurrentStep] = useState(2);
+  const [currentStep, setCurrentStep] = useState(1);
   const [isReviewCompleted, setIsReviewCompleted] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
 
