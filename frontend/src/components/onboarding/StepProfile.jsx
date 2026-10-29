@@ -252,10 +252,7 @@ export default function StepProfile({
           </div>
         </div>
 
-        {/* Informational Notice */}
-        <div className="bg-slate-50 border border-slate-200/80 rounded-lg p-3 text-xs text-slate-500">
-          Format checks are validated locally for user experience. Government portal verification is not conducted.
-        </div>
+        
 
         {/* Form Navigation Controls */}
         <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-3 pt-6 border-t border-slate-200">
