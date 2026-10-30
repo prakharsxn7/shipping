@@ -127,9 +127,10 @@ export default function StepProfile({
               type="text"
               autoCapitalize="characters"
               value={formData.gstin || ''}
-              onChange={(e) => onChange('gstin', e.target.value.toUpperCase())}
+              onChange={(e) => onChange('gstin', e.target.value.toUpperCase().replace(/\s+/g, ''))}
               placeholder="e.g. 27AAAAA0000A1Z5"
               maxLength={15}
+              minLength={15}
               aria-invalid={errors.gstin ? 'true' : 'false'}
               aria-describedby={errors.gstin ? 'gstin-error' : undefined}
               className={`w-full min-h-[48px] px-3.5 py-2.5 rounded-lg border text-sm font-mono uppercase text-slate-900 bg-white placeholder-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 ${
