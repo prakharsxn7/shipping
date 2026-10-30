@@ -143,16 +143,12 @@ export default function OnboardingPage() {
       }
 
       // GSTIN Validation (15 alphanumeric characters)
-      const cleanGstin = formData.gstin.trim();
-      const gstinRegex = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/i;
-      const generalAlphanumeric15 = /^[A-Z0-9]{15}$/i;
+      const cleanGstin = (formData.gstin || '').replace(/\s+/g, '');
 
       if (!cleanGstin) {
         newErrors.gstin = 'GSTIN is required';
-      } else if (!generalAlphanumeric15.test(cleanGstin)) {
-        newErrors.gstin = 'GSTIN must be exactly 15 alphanumeric characters';
-      } else if (!gstinRegex.test(cleanGstin)) {
-        newErrors.gstin = 'Please enter a valid GSTIN format (e.g. 27AAAAA0000A1Z5)';
+       } else if (cleanGstin.length !== 15) {
+        newErrors.gstin = 'GSTIN must be 15 characters';
       }
 
       // IEC Code Validation (10 alphanumeric characters)
